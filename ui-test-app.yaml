@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uitest-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ui-test
+  template:
+    metadata:
+      labels:
+        app: ui-test
+    spec:
+      containers:
+      - name: ui-test
+        image: 436112110102.dkr.ecr.eu-west-2.amazonaws.com/lbg-pg-repo:ui-test
+        ports:
+        - containerPort: 80
+          name: http

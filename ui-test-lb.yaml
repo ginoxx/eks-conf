@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Service            
+apiVersion: v1            
+metadata:                 
+  name: uitest-service     
+spec:                     
+  selector:               
+    app: ui-test            
+  ports:                 
+  - protocol: TCP         
+    targetPort: 80      
+    port: 80              
+    name: http            
+  type: LoadBalancer
