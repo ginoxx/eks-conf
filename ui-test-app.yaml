@@ -15,6 +15,18 @@ spec:
       containers:
       - name: ui-test
         image: 436112110102.dkr.ecr.eu-west-2.amazonaws.com/lbg-pg-repo:ui-test
+        env:
+          - name: ENDEAVOUR_USER
+            valueFrom:
+              secretKeyRef:
+                name: endeavour-secrets
+                key: basicUser       
+          - name: ENDEAVOUR_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: endeavour-secrets
+                key: basicPassword   
         ports:
         - containerPort: 3000
           name: http
+      
