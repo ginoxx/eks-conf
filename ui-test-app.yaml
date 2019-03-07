@@ -16,5 +16,5 @@ spec:
       - name: ui-test
         image: 436112110102.dkr.ecr.eu-west-2.amazonaws.com/lbg-pg-repo:ui-test
         ports:
-        - containerPort: 80
+        - containerPort: 3000
           name: http
